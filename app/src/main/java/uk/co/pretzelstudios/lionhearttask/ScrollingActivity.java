@@ -27,9 +27,14 @@ import java.util.ArrayList;
 
 
     public class ScrollingActivity extends AppCompatActivity implements ExampleAdapter.OnItemClickListener {
+
+        // created string below for JSON Array list
+
         public static final String EXTRA_URL = "imageUrl";
         public static final String EXTRA_CREATOR = "creatorName";
         public static final String EXTRA_LIKES = "likeCount";
+
+        // referencing my views and adapters
 
         private RecyclerView mRecyclerView;
         private ExampleAdapter mExampleAdapter;
@@ -43,9 +48,13 @@ import java.util.ArrayList;
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        // defining my views .setfixed size helps with the performance of the recycler view and stops it lagging.
+
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        // setting up my array list for jSON
 
         mExampleList = new ArrayList<>();
 
@@ -53,7 +62,7 @@ import java.util.ArrayList;
         parseJSON();
 
     }
-
+            // added url to JSON path including my API KEY.
         private void parseJSON() {
             String url = "https://pixabay.com/api/?key=9355841-c32b1483cf2003fdf188b1b2d&q=fast+food+hot&image_type=photo&pretty=true";
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
@@ -62,7 +71,10 @@ import java.util.ArrayList;
                         public void onResponse(JSONObject response) {
 
                             try {
+                                //calling hits array from pixabay
                                 JSONArray jsonArray = response.getJSONArray("hits");
+
+                                //looping through the array
 
                                 for (int i = 0; i < jsonArray.length(); i ++) {
                                     JSONObject hit = jsonArray.getJSONObject(i);
@@ -74,6 +86,7 @@ import java.util.ArrayList;
                                     mExampleList.add(new ExampleItem(imageUrl, creatorName, likeCount));
                                 }
 
+                                // passing data to my recycler view
                                 mExampleAdapter = new ExampleAdapter(ScrollingActivity.this, mExampleList);
                                 mRecyclerView.setAdapter(mExampleAdapter);
                                 mExampleAdapter.setOnItemClickListener(ScrollingActivity.this);
@@ -94,6 +107,8 @@ import java.util.ArrayList;
 
         @Override
         public void onItemClick(int position) {
+        //added onclick method to pull the data across to my next activity.
+            // This will only be displaying the image however I kept the data in as this could be useful later on if I decided to change my design.
             Intent detailIntent = new Intent(this, DetailActivity.class);
             ExampleItem clickedItem = mExampleList.get(position);
 
