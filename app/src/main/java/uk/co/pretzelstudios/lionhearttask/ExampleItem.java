@@ -1,6 +1,8 @@
 package uk.co.pretzelstudios.lionhearttask;
 
 public class ExampleItem {
+
+    // defining my methods
     private String mImageUrl;
     private String mCreator;
     private int mLikes;
@@ -10,6 +12,8 @@ public class ExampleItem {
         mCreator = creator;
         mLikes = likes;
     }
+
+    //return statements for my array adapter
 
     public String getImageUrl() {
         return mImageUrl;
