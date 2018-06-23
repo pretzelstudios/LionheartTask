@@ -148,6 +148,15 @@ import java.util.ArrayList;
 
                 return true;
             }
+            if (id == R.id.action_settings2) {
+
+                //opens my website from the menu :)
+                Uri uri = Uri.parse("https://play.google.com/store/apps/developer?id=Pretzel+Studios"); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+
+                return true;
+            }
             return super.onOptionsItemSelected(item);
         }
     }
