@@ -93,6 +93,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:fontFamily="serif-monospace"
+        android:onClick="Enter"
         android:text="Click to enter"
         android:textSize="18sp"
         android:textStyle="bold"

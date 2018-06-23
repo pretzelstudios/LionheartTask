@@ -1,5 +1,6 @@
 package uk.co.pretzelstudios.lionhearttask;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,10 +22,17 @@ public class StartActivity extends YouTubeBaseActivity {
 
     YouTubePlayerView mYoutubePlayerView;
     Button btnPlay;
+    Button btnEnter;
     YouTubePlayer.OnInitializedListener mOnInitializedListener;
 
+    public void Enter (View view) {
 
-    @Override
+        Intent intent = new Intent(getApplicationContext(), ScrollingActivity.class);
+        startActivity(intent);
+    }
+
+
+        @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
@@ -32,7 +40,7 @@ public class StartActivity extends YouTubeBaseActivity {
         Log.d(TAG, "onCreate: Starting");
 
         //defining my button and player
-
+        btnEnter = (Button)findViewById(R.id.enterBtn);
         btnPlay = (Button) findViewById(R.id.btnPlay);
         mYoutubePlayerView = (YouTubePlayerView) findViewById(R.id.youtubePlay);
         mOnInitializedListener = new YouTubePlayer.OnInitializedListener() {
