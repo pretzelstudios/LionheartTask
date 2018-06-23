@@ -117,6 +117,8 @@ import java.util.ArrayList;
             detailIntent.putExtra(EXTRA_LIKES, clickedItem.getLikeCount());
 
             startActivity(detailIntent);
+            //added transition
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         }
 
 

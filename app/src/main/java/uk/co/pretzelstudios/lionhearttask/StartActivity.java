@@ -31,6 +31,7 @@ public class StartActivity extends YouTubeBaseActivity {
 
         Intent intent = new Intent(getApplicationContext(), ScrollingActivity.class);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
 
