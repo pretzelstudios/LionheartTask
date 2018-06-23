@@ -7,6 +7,6 @@
     <string name="about">
         "Use the 'Not hot dog' App to Scroll through a list clicking on popular food items scraped from the internet. Categorize them by selecting hot dog or not hot dog. Take a screenshot, then edit and share with your results with your friends. Have fun :)"
     </string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Developers Website</string>
     <string name="title_activity_scrolling">NOT HOT DOG</string>
 </resources>

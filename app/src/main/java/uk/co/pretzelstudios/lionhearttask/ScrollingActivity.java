@@ -1,6 +1,7 @@
 package uk.co.pretzelstudios.lionhearttask;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -40,6 +41,7 @@ import java.util.ArrayList;
         private ExampleAdapter mExampleAdapter;
         private ArrayList<ExampleItem> mExampleList;
         private RequestQueue mRequestQueue;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,6 +140,12 @@ import java.util.ArrayList;
 
             //noinspection SimplifiableIfStatement
             if (id == R.id.action_settings) {
+
+                //opens my website from the menu :)
+                Uri uri = Uri.parse("http://www.pretzelstudios.co.uk"); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+
                 return true;
             }
             return super.onOptionsItemSelected(item);
