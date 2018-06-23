@@ -107,11 +107,12 @@
         android:orientation="horizontal">
 
         <Button
+            android:background="@drawable/buttonstyle1"
+            android:textColor="#fff"
             android:id="@+id/hotdogBtn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="#fff"
             android:fontFamily="serif-monospace"
             android:onClick="hotDogClick"
             android:text="Hotdog"
@@ -119,11 +120,12 @@
             android:textStyle="bold" />
 
         <Button
+            android:background="@drawable/buttonstyle3"
+            android:textColor="@android:color/black"
             android:id="@+id/not_hotdogBtn"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:background="#fff"
             android:fontFamily="serif-monospace"
             android:onClick="notHotdogClick"
             android:text="Not Hotdog"
