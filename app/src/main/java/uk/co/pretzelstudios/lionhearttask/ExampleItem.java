@@ -7,13 +7,15 @@ public class ExampleItem {
     private String mCreator;
     private int mLikes;
 
+    // defining my strings and ints from my array.
+
     public ExampleItem(String imageUrl, String creator, int likes) {
         mImageUrl = imageUrl;
         mCreator = creator;
         mLikes = likes;
     }
 
-    //return statements for my array adapter
+    //return statements for my array adapter to pull data into my activity
 
     public String getImageUrl() {
         return mImageUrl;

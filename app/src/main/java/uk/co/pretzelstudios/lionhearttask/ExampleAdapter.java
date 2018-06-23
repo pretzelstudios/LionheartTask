@@ -14,6 +14,8 @@ import java.util.ArrayList;
 
 
 public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder> {
+
+    // defining my methods to be implemented below
     private Context mContext;
     private ArrayList<ExampleItem> mExampleList;
     private OnItemClickListener mListener;
@@ -26,6 +28,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         mListener = listener;
     }
 
+    //created an onclick lister to call the array each time an image is selected.
+
     public ExampleAdapter(Context context, ArrayList<ExampleItem> exampleList) {
         mContext = context;
         mExampleList = exampleList;
@@ -33,6 +37,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
 
     @Override
     public ExampleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        //adds cards to my recycler view
         View v = LayoutInflater.from(mContext).inflate(R.layout.example_item, parent, false);
         return new ExampleViewHolder(v);
     }
@@ -40,6 +45,8 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     @Override
     public void onBindViewHolder(ExampleViewHolder holder, int position) {
         ExampleItem currentItem = mExampleList.get(position);
+
+        //pulls info from my array list into my cards
 
         String imageUrl = currentItem.getImageUrl();
         String creatorName = currentItem.getCreator();
@@ -55,12 +62,16 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
         return mExampleList.size();
     }
 
+    //adds info to each card
+
     public class ExampleViewHolder extends RecyclerView.ViewHolder {
         public ImageView mImageView;
         public TextView mTextViewCreator;
         public TextView mTextViewLikes;
 
         public ExampleViewHolder(View itemView) {
+
+            //defining my layout items
             super(itemView);
             mImageView = itemView.findViewById(R.id.image_view);
             mTextViewCreator = itemView.findViewById(R.id.text_view_creator);
