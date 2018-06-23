@@ -11,7 +11,7 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-//created seperate config file so this can be accessed easily if needed to change later.
+//created separate config file so this can be accessed easily if needed to change later.
 
 public class StartActivity extends YouTubeBaseActivity {
 
