@@ -25,6 +25,8 @@ public class StartActivity extends YouTubeBaseActivity {
     Button btnEnter;
     YouTubePlayer.OnInitializedListener mOnInitializedListener;
 
+    // added intent to move to the next screen
+
     public void Enter (View view) {
 
         Intent intent = new Intent(getApplicationContext(), ScrollingActivity.class);
@@ -42,8 +44,12 @@ public class StartActivity extends YouTubeBaseActivity {
         //defining my button and player
         btnEnter = (Button)findViewById(R.id.enterBtn);
         btnPlay = (Button) findViewById(R.id.btnPlay);
+
+        // initializing the player to load selected video
         mYoutubePlayerView = (YouTubePlayerView) findViewById(R.id.youtubePlay);
         mOnInitializedListener = new YouTubePlayer.OnInitializedListener() {
+
+            // on success the video loads
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 Log.d(TAG, "onClick: Done Initializing");
